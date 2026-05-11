@@ -40,7 +40,7 @@ def fetch_bunjang(keyword):
     return pd.DataFrame(all_products)
 
 st.set_page_config(layout="wide")
-st.title("💰 디지털 시세 분석기 (3개월/최소50개 기준)")
+st.title("💰 번개장터 시세검색 (3개월/최소50개 기준)")
 
 keyword = st.text_input("검색할 키워드 입력:")
 # ... (앞부분 생략) ...
@@ -60,7 +60,7 @@ if keyword:
         df = df.sort_values(by="날짜", ascending=False)
 
         # ---[추가/수정] 상단에 통계 배치 ---
-        st.subheader("📊 시세 요약")
+        st.subheader("📊 시세 요약 : da_mc 제작")
         c1, c2, c3 = st.columns(3)
         c1.markdown(f"""<div style="text-align: center; font-size: 14px; color: gray;">최저가</div>
                         <div style="text-align: center; font-size: 18px; font-weight: bold;">{df['가격'].min():,}원</div>""", unsafe_allow_html=True)
